@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish:module": "http-server --cors dist/bundle",
+    "serve:module": "http-server --cors dist/bundle",
     "compile:module": "ngc -p tsconfig.module.json",
     "rollup:module": "rollup -c rollup.config.js",
     "bundle:module": "npm run compile:module && npm run rollup:module"

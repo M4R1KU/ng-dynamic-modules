@@ -5,6 +5,10 @@ Example application on how to lazily load prebuilt angular modules from any loca
 The motivation behind this behaviour is that sub modules of an app can be developed independently by different teams and also deployed independently on different servers.
 With this we can dynamically collect our modules that we want to have in our app and most importantly the submodules do not have to be known at build time of the enclosing app.
 
+## Running the whole thing
+
+To see how to run this demonstration, read the other README's in the subfolders.
+
 ## Building a dynamic module
 
 A dynamic module is just a normal Angular module which is built manually and bundled into UMD bundle.  
@@ -178,3 +182,12 @@ In the older versions of Angular you could achieve the same behaviour but you ha
 With Ivy it will still call the compiler in the background but this compiler is much, much leaner than the old one because everything in the bundle is already ready to be consumed by Angular as is.
 
 A more detailed explanation can be found in a talk of Jason Aden at AngularConnect 2018 [here](https://www.youtube.com/watch?v=MMPl9wHzmS4&feature=youtu.be&t=738).
+
+## Notes
+
+This repository only contains a very barebones solution to the problem. To make this solution ready to be used in a production environment there is a whole lot of things to be considered.
+
+For example
+- canLoad Guards and other security measures
+- dynamic collection of the module definition
+- deployment of the module (maybe CORS and Content-Security-Policy issues)

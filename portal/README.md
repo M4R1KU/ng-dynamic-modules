@@ -1,6 +1,6 @@
 # Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0-beta.11.
+App which can lazy load Angular modules from other sources than its own built environment.
 
 ## Development server
 
