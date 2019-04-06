@@ -1,0 +1,8 @@
+[
+  {
+    "path": "module-a",
+    "name": "module-a",
+    "ngModuleName": "ModuleAModule",
+    "source": "http://localhost:8080/module.js"
+  }
+]
