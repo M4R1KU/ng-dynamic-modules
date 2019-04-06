@@ -20,10 +20,12 @@ Also it has a separate tsconfig for compiling the module, which defines that onl
 This means that we have to re-export every module, component etc. that we want to use in the wrapper application which loads our module.
 If the module does everything by having its own Router configuration we only have to re-export the main module as is the case here.
 
+`module.ts`
 ```typescript
 export * from './app/module-a/module-a.module';
 ```
 
+`tsconfig.module.ts`
 ```json
 {
   "extends": "./tsconfig.app.json",
@@ -41,6 +43,7 @@ export * from './app/module-a/module-a.module';
 }
 ```
 
+`rollup.config.js`
 ```javascript
 export default {
   input: 'dist/out-module/module.js',
@@ -71,6 +74,7 @@ The portal app is our app that loads the prebuilt module from a local webserver.
 
 We've got the modules.json which defines all modules that can be loaded lazily. We can also define a path under which the module will be available in the router.
 
+`modules.json`
 ```json
 [
   {
@@ -103,6 +107,7 @@ import * as angularRouter from '@angular/Router';
  
 If we look at the fourth line of our umd bundle we can check for the correct names.
 
+`module.js` (UMD-Bundle)
 ```javascript
 ...
 (global = global || self, factory(global['module-a'] = {}, global.ng.core, global.ng.common, global.ng.router));
@@ -140,6 +145,18 @@ export function routeInitializer(http: HttpClient, injector: Injector) {
       })
     ).toPromise();
 }
+```
+
+`app.module.ts`
+```typescript
+providers: [
+  {
+    provide: APP_INITIALIZER,
+    useFactory: routeInitializer,
+    deps: [HttpClient, Injector],
+    multi: true 
+  }
+]
 ```
 
 ### Loading the module
