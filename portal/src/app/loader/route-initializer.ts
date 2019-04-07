@@ -22,14 +22,10 @@ export function routeInitializer(http: HttpClient, injector: Injector) {
     .pipe(tap(definitions => {
         const router = injector.get(Router);
 
-        const paths: Routes = [];
-
-        for (const definition of definitions) {
-          paths.push({
-            path: definition.path,
-            loadChildren: () => loadModule(definition)
-          });
-        }
+        const paths: Routes = definitions.map(definition => ({
+          path: definition.path,
+          loadChildren: () => loadModule(definition)
+        }));
 
         router.resetConfig([
           ...paths,
