@@ -4,5 +4,11 @@
     "name": "module-a",
     "ngModuleName": "ModuleAModule",
     "source": "http://localhost:8080/module.js"
+  },
+  {
+    "path": "module-b",
+    "name": "module-b",
+    "ngModuleName": "ModuleBModule",
+    "source": "http://localhost:8888/module.js"
   }
 ]
