@@ -194,7 +194,7 @@ export function loadModule(definition: ModuleDefinition): Promise<Type<any>> {
 
 ## Angular 8 and its Gems
 
-So with the new Angular Ivy compiler which comes with (optionally) with Angular 8 the components of Angular are compiled to a different format and we finally can get rid of the ngfactories which we're a burden for lazy loading custom chunks of code.
+So with the new Angular Ivy compiler which comes (optionally) with Angular 8 the components of Angular are compiled to a different format and we finally can get rid of the ngfactories which we're a burden for lazy loading custom chunks of code.
 In the older versions of Angular you could achieve the same behaviour but you had to use the compiler to manually compile the modules at runtime and this was not really what one wished for when using AOT.
 With Ivy it will still call the compiler in the background but this compiler is much, much leaner than the old one because everything in the bundle is already ready to be consumed by Angular as is.
 
