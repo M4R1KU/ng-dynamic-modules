@@ -208,3 +208,4 @@ For example
 - canLoad Guards and other security measures
 - dynamic collection of the module definition
 - deployment of the module (maybe CORS and Content-Security-Policy issues)
+- The Angular compiler cannot process scss/sass/less on its own with solution in module-a we can only use plain css but module-b uses the Angular-CLI's built-in support for [ng-packagr](https://github.com/ng-packagr/ng-packagr) which does the magic for us and process the scss files.
