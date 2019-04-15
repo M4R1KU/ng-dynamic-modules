@@ -5,6 +5,9 @@ import { tap } from 'rxjs/operators';
 import * as angularRouter from '@angular/router';
 import { Router, Routes } from '@angular/router';
 import * as angularCommon from '@angular/common';
+import * as angularMaterial from '@angular/material';
+import * as angularMaterialFormField from '@angular/material/form-field';
+import * as angularCdkOverlay from '@angular/cdk/overlay';
 
 export interface ModuleDefinition {
   path: string;
@@ -16,6 +19,10 @@ export interface ModuleDefinition {
 (window as any).ng.core = angularCore;
 (window as any).ng.common = angularCommon;
 (window as any).ng.router = angularRouter;
+(window as any).ng.material = angularMaterial;
+(window as any).ng.material['form-field'] = angularMaterialFormField;
+(window as any).ng.cdk = {};
+(window as any).ng.cdk.overlay = angularCdkOverlay;
 
 export function routeInitializer(http: HttpClient, injector: Injector) {
   return () => http.get<ModuleDefinition[]>('/assets/modules.json')

@@ -8,10 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve:module": "http-server --cors -p 8888 dist/bundle",
-    "compile:module": "ngc -p tsconfig.module.json",
-    "rollup:module": "rollup -c rollup.config.js",
-    "bundle:module": "npm run compile:module && npm run rollup:module"
+    "serve:module": "http-server --cors -p 8888 dist/module-b/bundles",
+    "bundle:module": "ng build module-b"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +17,8 @@
     "@angular/common": "~8.0.0-beta.11",
     "@angular/compiler": "~8.0.0-beta.11",
     "@angular/core": "~8.0.0-beta.11",
+    "@angular/cdk": "~8.0.0-beta.1",
+    "@angular/material": "~8.0.0-beta.1",
     "@angular/forms": "~8.0.0-beta.11",
     "@angular/platform-browser": "~8.0.0-beta.11",
     "@angular/platform-browser-dynamic": "~8.0.0-beta.11",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0-beta.7",
+    "@angular-devkit/build-ng-packagr": "~0.800.0-beta.7",
     "@angular/cli": "~8.0.0-beta.11",
     "@angular/compiler-cli": "~8.0.0-beta.11",
     "@angular/language-service": "~8.0.0-beta.11",
@@ -45,8 +46,8 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
-    "rollup": "^1.9.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.13.1",
     "typescript": "~3.3.3333"

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '',
-        loadChildren: () => import('./module-b/module-b.module').then(m => m.ModuleBModule)
+        loadChildren: () => import('module-b').then(m => m.ModuleBModule)
       }
     ])
   ],

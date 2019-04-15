@@ -9,6 +9,6 @@
     "path": "module-b",
     "name": "module-b",
     "ngModuleName": "ModuleBModule",
-    "source": "http://localhost:8888/module.js"
+    "source": "http://localhost:8888/module-b.umd.min.js"
   }
 ]
