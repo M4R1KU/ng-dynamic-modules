@@ -20,7 +20,7 @@ export interface ModuleDefinition {
 (window as any).ng.common = angularCommon;
 (window as any).ng.router = angularRouter;
 (window as any).ng.material = angularMaterial;
-(window as any).ng.material['form-field'] = angularMaterialFormField;
+(window as any).ng.material.formField = angularMaterialFormField;
 (window as any).ng.cdk = {};
 (window as any).ng.cdk.overlay = angularCdkOverlay;
 

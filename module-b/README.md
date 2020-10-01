@@ -8,7 +8,7 @@ This lets us extend the original idea of vertical separation in the backend to t
 
 ## Install
 
-`npm install && ng build`
+`npm install`
 
 ## Build bundle
 
@@ -16,5 +16,5 @@ To build the UMD bundle for later serving to the app run `npm run bundle:module`
 
 ## Serve module
 
-To make the UMD bundle accessible for the portal app run `npm run serve:module`.  
+To make the UMD bundle accessible for the portal app run `npm run serve:module`.
 And then start the portal app in its directory by running `ng s`
