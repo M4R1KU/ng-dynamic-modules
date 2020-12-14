@@ -4,7 +4,9 @@ import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatNativeDateModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { routeInitializer } from './loader/route-initializer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
