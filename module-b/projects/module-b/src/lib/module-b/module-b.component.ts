@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-module-b',
@@ -21,10 +22,28 @@ export class ModuleBComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  public form: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
+      birthday: ['', Validators.required]
+    });
+  }
+
+  public addPerson(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.people = [
+      ...this.people,
+      this.form.value
+    ];
   }
 
 }
