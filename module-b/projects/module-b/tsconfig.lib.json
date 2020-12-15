@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
+    "declarationMap": false,
     "target": "esnext",
     "declaration": true,
     "inlineSources": true,
@@ -16,8 +17,7 @@
     "strictMetadataEmit": false,
     "fullTemplateTypeCheck": false,
     "strictInjectionParameters": true,
-    "enableResourceInlining": true,
-    "enableIvy": true
+    "enableResourceInlining": true
   },
   "exclude": [
     "src/test.ts",
