@@ -5,6 +5,11 @@ Example application on how to lazily load prebuilt angular modules from any loca
 The motivation behind this behaviour is that sub modules of an app can be developed independently by different teams and also deployed independently on different servers.
 With this we can dynamically collect our modules that we want to have in our app and most importantly the submodules do not have to be known at build time of the enclosing app.
 
+## Disclaimer
+
+The solution I propose here is not wrong and does work (we have been using it in production for more than 1 year) but since the web environment changes fast it is not my recommended method for the future. With webpack 5 there is a new and better way to do microfrontends called [Module Federation](https://webpack.js.org/concepts/module-federation). To see a very similar solution to the one shown in this repository but with Module Federation visit https://github.com/M4R1KU/angular-module-federation.
+A more minimal React example can be found here https://github.com/M4R1KU/react-module-federation. The cool thing about Module Federation is that it is framework agnostic so you can use it with anything that you want.
+
 ## Running the whole thing
 
 To see how to run this demonstration, read the other README's in the subfolders.
