@@ -192,9 +192,9 @@ export function loadModule(definition: ModuleDefinition): Promise<Type<any>> {
 }
 ```
 
-## Angular 8 and its Gems
+## Angular 8 (and newer) and its Gems
 
-So with the new Angular Ivy compiler which comes (optionally) with Angular 8 the components of Angular are compiled to a different format and we finally can get rid of the ngfactories which we're a burden for lazy loading custom chunks of code.
+So with the new Angular Ivy compiler which comes (optionally, from Angular 9 on it is the default) with Angular 8 the components of Angular are compiled to a different format and we finally can get rid of the ngfactories which we're a burden for lazy loading custom chunks of code.
 In the older versions of Angular you could achieve the same behaviour but you had to use the compiler to manually compile the modules at runtime and this was not really what one wished for when using AOT.
 With Ivy it will still call the compiler in the background but this compiler is much, much leaner than the old one because everything in the bundle is already ready to be consumed by Angular as is.
 
@@ -208,4 +208,4 @@ For example
 - canLoad Guards and other security measures
 - dynamic collection of the module definition
 - deployment of the module (maybe CORS and Content-Security-Policy issues)
-- The Angular compiler cannot process scss/sass/less on its own with solution in module-a we can only use plain css but module-b uses the Angular-CLI's built-in support for [ng-packagr](https://github.com/ng-packagr/ng-packagr) which does the magic for us and process the scss files.
+- The Angular compiler cannot process scss/sass/less on its own with the solution in module-a we can only use plain css but module-b uses the Angular-CLI's built-in support for [ng-packagr](https://github.com/ng-packagr/ng-packagr) which does the magic for us and processes the scss files.
